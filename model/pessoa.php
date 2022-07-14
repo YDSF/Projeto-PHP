@@ -1,12 +1,13 @@
 <?php 
 class Pessoa {
+    private $IdPessoa;
     private $nome;
     private $telefone;
     private $email;
     private $endereco;
-
+    
     public function Pessoa(){
-        
+
     }
      
     /**
@@ -88,7 +89,25 @@ class Pessoa {
 
         return $this;
     }
+    
+
+    /**
+     * Get the value of IdPessoa
+     */ 
+    public function getIdPessoa()
+    {
+        return $this->IdPessoa;
+    }
+
+    /**
+     * Set the value of IdPessoa
+     *
+     * @return  self
+     */ 
+    public function setIdPessoa($IdPessoa)
+    {
+        $this->IdPessoa = $IdPessoa;
+
+        return $this;
+    }
 }
-
-
-?>
