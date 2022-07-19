@@ -7,9 +7,10 @@
 </head>
 
 <body>
-    <?php
-    echo "<h1>Olá Mundo</h1>";
-    ?>
+
+    <h1>Tela Inicial</h1>
+    <br /><br />
+    <button onclick="location.href='view/CadUsuario.php'">Cadastro de Usuario</button>
 </body>
 
 </html>

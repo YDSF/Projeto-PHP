@@ -97,6 +97,4 @@ class Usuario
 
         return $User;
     }
-
-    
 }

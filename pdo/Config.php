@@ -3,6 +3,3 @@
     $user = 'root';
     $pass = '';
     $dbName = 'crudpessoa';
-    
-
-?>
