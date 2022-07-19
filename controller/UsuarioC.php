@@ -4,7 +4,8 @@ class UsuarioC
 {
     public function inserir()
     {
-        if (isset($_POST['salvar'])) {
+        if (isset($_POST['Salvar'])) {
+            var_dump($_POST);
             $nome = $_POST['nome'];
             $usuario = $_POST['usuario'];
             $senha = $_POST['senha'];

@@ -18,4 +18,4 @@ class Connection
     }
 }
 
-return Connection::getConnection($host, $dbName, $userName, $pass);
+return Connection::getConnection($host, $dbName, $user, $pass);

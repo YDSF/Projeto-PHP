@@ -21,7 +21,7 @@ $CadUsuario = new UsuarioC();
         <br/><br/>
         <input type="text" name="usuario" placeholder="User aqui...">
         <br/><br/>
-        <input type="password" name="senha" minlength="8">
+        <input type="password" name="senha" minlength="8" placeholder="Digite aqui...">
         <br/><br/>
         <input type="submit" name="Salvar" value="Salvar">
         <input type="reset" value="Limpar">
@@ -29,9 +29,6 @@ $CadUsuario = new UsuarioC();
         onclick="location.href='../index.php'">
         <input type="button" value="Lista Usuários"
         onclick="location.href='listaUsuarios.php'">
-
-
-
 
     </form>
 </body>
