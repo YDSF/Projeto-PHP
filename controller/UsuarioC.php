@@ -25,7 +25,7 @@ class UsuarioC
     public function getUsuarios()
     {
         $pdo = require_once '../pdo/Connection.php';
-        $sql = "select IdUsuario, NomeUsuario, Usuario from Usuario";
+        $sql = "select IdUsuario, nomeUsuario, Usuario from Usuario";
         $sth = $pdo->prepare($sql);
         $sth->execute();
         $result = $sth->fetchAll();
