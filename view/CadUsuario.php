@@ -20,6 +20,12 @@ $listaUser = $CadUsuario->getUsuarios();
     <form action="<?php $CadUsuario->inserir(); ?>" method="POST">
         <input type="text" name="nome" placeholder="Nome aqui...">
         <br /><br />
+        <select name="perfilAcesso">
+            <option value="">Perfil Acesso</option>
+            <option value="admin">Administrador</option>
+            <option value="user">Usuário</option>
+        </select>
+        <br /><br />
         <input type="text" name="usuario" placeholder="User aqui...">
         <br /><br />
         <input type="password" name="senha" minlength="8" placeholder="Digite aqui...">
@@ -38,22 +44,28 @@ $listaUser = $CadUsuario->getUsuarios();
                 <tr>
                     <th>ID</th>
                     <th>Nome Usuário</th>
+                    <th>Perfil Acesso</th>
                     <th>Usuário</th>
                     <th>Funções</th>
+                    
                 </tr>
             </thead>
 
             <body>
                 <?php foreach ($listaUser as $user) : ?>
                     <tr>
-                        <td><?php echo $user ['IdUsuario']  ?></td>
-                        <td><?php echo $user ['nomeUsuario']  ?></td>
-                        <td><?php echo $user ['Usuario']  ?></td>
+                        <td><?php echo $user['IdUsuario']  ?></td>
+                        <td><?php echo $user['nomeUsuario']  ?></td>
+                        <td><?php echo $user['perfilAcesso']  ?></td>
+                        <td><?php echo $user['Usuario']  ?></td>
+                       
                         <td>---</td>
                     </tr>
                 <?php endforeach; ?>
             </body>
         </table>
+        <input type="button" value="Ocultar lista" onclick="document.getElementById('lista').style.visibility='hidden';">
+
 
     </div>
 

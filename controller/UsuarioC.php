@@ -9,13 +9,15 @@ class UsuarioC
             $nome = $_POST['nome'];
             $usuario = $_POST['usuario'];
             $senha = $_POST['senha'];
+            $perfilAcesso = $_POST['perfilAcesso'];
             var_dump($_POST);
             $pdo = require_once '../pdo/Connection.php';
-            $sql = "insert into usuario values (null, ?,?,?)";
+            $sql = "insert into usuario values (null, ?,?,?,?)";
             $sth = $pdo->prepare($sql);
             $sth->bindParam(1, $nome, PDO::PARAM_STR);
             $sth->bindParam(2, $usuario, PDO::PARAM_STR);
             $sth->bindParam(3, $senhaEc, PDO::PARAM_STR);
+            $sth->bindParam(4, $perfilAcesso, PDO::PARAM_STR);
             $senhaEc = password_hash($senha, PASSWORD_DEFAULT);
             $sth->execute();
             unset($sth);
@@ -25,7 +27,7 @@ class UsuarioC
     public function getUsuarios()
     {
         $pdo = require_once '../pdo/Connection.php';
-        $sql = "select IdUsuario, nomeUsuario, Usuario from Usuario";
+        $sql = "select IdUsuario, nomeUsuario, perfilAcesso, Usuario from Usuario";
         $sth = $pdo->prepare($sql);
         $sth->execute();
         $result = $sth->fetchAll();
@@ -57,7 +59,7 @@ class UsuarioC
     public function getUsuarioById($id)
     {
         $pdo = require_once '../pdo/Connection.php';
-        $sql = "Select IdUsuario, nomeUsuario, usuario" . "from usuario where idUsuario = ?";
+        $sql = "Select IdUsuario, nomeUsuario, perfilAcesso, usuario" . "from usuario where idUsuario = ?";
     }
 
     public function trocaSenha()
