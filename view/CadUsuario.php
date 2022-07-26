@@ -33,42 +33,11 @@ $listaUser = $CadUsuario->getUsuarios();
         <input type="submit" name="Salvar" value="Salvar">
         <input type="reset" value="Limpar">
         <input type="button" value="Voltar" onclick="location.href='../index.php'">
-        <input type="button" value="Lista Usuários" onclick="document.getElementById('lista').style.visibility='visible';">
+        <input type="button" value="Lista Usuários" onclick="location.href='listaUsuarios.php'">
 
     </form>
     <br />
-    <div id="lista" style="visibility: hidden">
-        <h2>Lista Usuarios</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome Usuário</th>
-                    <th>Perfil Acesso</th>
-                    <th>Usuário</th>
-                    <th>Funções</th>
-                    
-                </tr>
-            </thead>
-
-            <body>
-                <?php foreach ($listaUser as $user) : ?>
-                    <tr>
-                        <td><?php echo $user['IdUsuario']  ?></td>
-                        <td><?php echo $user['nomeUsuario']  ?></td>
-                        <td><?php echo $user['perfilAcesso']  ?></td>
-                        <td><?php echo $user['Usuario']  ?></td>
-                       
-                        <td>---</td>
-                    </tr>
-                <?php endforeach; ?>
-            </body>
-        </table>
-        <input type="button" value="Ocultar lista" onclick="document.getElementById('lista').style.visibility='hidden';">
-
-
-    </div>
-
+    
 </body>
 
 </html>
