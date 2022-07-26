@@ -5,16 +5,18 @@ $listaUser = $CadUsuario->getUsuarios();
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    
+
 </head>
+
 <body>
-<div id="lista">
+    <div id="lista">
         <h2>Lista Usuarios</h2>
         <table>
             <thead>
@@ -24,7 +26,7 @@ $listaUser = $CadUsuario->getUsuarios();
                     <th>Perfil Acesso</th>
                     <th>Usuário</th>
                     <th>Funções</th>
-                    
+
                 </tr>
             </thead>
 
@@ -35,16 +37,26 @@ $listaUser = $CadUsuario->getUsuarios();
                         <td><?php echo $user['nomeUsuario']  ?></td>
                         <td><?php echo $user['perfilAcesso']  ?></td>
                         <td><?php echo $user['usuario']  ?></td>
-                       
-                        <td>---</td>
+                        <td>
+                            <form action="editarUser" method="POST">
+                                <input type="hidden" name="idUsuario" value="<?php echo $user['idUsuario']; ?>">
+                                <input type="submit" name="editar" value="Editar">
+                            </form>
+                            <form action="../controller/deletarUser.php" method="POST">
+                                <input type="hidden" name="idUsuario" value="<?php echo $user['idUsuario']; ?>">
+                                <input type="submit" name="deletar" value="Deletar">
+                            </form>
+
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </body>
         </table>
-        <input type="button" value="Ocultar lista" onclick="document.getElementById('lista').style.visibility='hidden';">
-        <input type="button" value="Voltar" onclick="location.href='../index.php'">
+
+        <input type="button" value="Voltar" onclick="location.href='cadUsuario.php'">
 
 
     </div>
 </body>
+
 </html>
