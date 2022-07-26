@@ -1,6 +1,6 @@
 <?php
-require_once '../controller/UsuarioC.php';
-$CadUsuario = new UsuarioC();
+require_once '../controller/CUsuario.php';
+$CadUsuario = new CUsuario();
 $listaUser = $CadUsuario->getUsuarios();
 
 ?>
@@ -31,10 +31,10 @@ $listaUser = $CadUsuario->getUsuarios();
             <body>
                 <?php foreach ($listaUser as $user) : ?>
                     <tr>
-                        <td><?php echo $user['IdUsuario']  ?></td>
+                        <td><?php echo $user['idUsuario']  ?></td>
                         <td><?php echo $user['nomeUsuario']  ?></td>
                         <td><?php echo $user['perfilAcesso']  ?></td>
-                        <td><?php echo $user['Usuario']  ?></td>
+                        <td><?php echo $user['usuario']  ?></td>
                        
                         <td>---</td>
                     </tr>
