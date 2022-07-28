@@ -35,10 +35,10 @@ $listaUser = $CadUsuario->getUsuarios();
                     <tr>
                         <td><?php echo $user['idUsuario']  ?></td>
                         <td><?php echo $user['nomeUsuario']  ?></td>
-                        <td><?php echo $user['perfilAcesso']  ?></td>
+                        <td><?php if($user['perfilAcesso'] == "admin"){echo "Administrador";} elseif ($user['perfilAcesso'] == "user") {echo "Usuário";}?></td>
                         <td><?php echo $user['usuario']  ?></td>
                         <td>
-                            <form action="editarUser" method="POST">
+                            <form action="editarUser.php" method="POST">
                                 <input type="hidden" name="idUsuario" value="<?php echo $user['idUsuario']; ?>">
                                 <input type="submit" name="editar" value="Editar">
                             </form>

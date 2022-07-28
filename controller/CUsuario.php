@@ -1,15 +1,5 @@
 <?php
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPClass.php to edit this template
- */
-
-/**
- * Description of CUsuario
- *
- * @author jbferraz
- */
 class CUsuario {
 
     //put your code here
@@ -61,8 +51,7 @@ class CUsuario {
 
     public function getUsuarioById($id) {
         $pdo = require_once '../pdo/Connection.php';
-        $sql = "select idUsuario, nomeUsuario, usuario "
-                . "from usuario where idUsuario = ?";
+        $sql = "select idUsuario, nomeUsuario, usuario, perfilAcesso ". "from usuario where idUsuario = ?";
         $sth = $pdo->prepare($sql);
         $sth->bindParam(1, $id, PDO::PARAM_INT);
         $sth->execute();
